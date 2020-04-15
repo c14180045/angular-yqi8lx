@@ -7,6 +7,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent  {
   name='alvin';
+  item = [{
+    name : 'itema',
+    price : 520
+  }, {
+    name : 'itemb',
+    price : 220
+  }];
+  itemArr = ['x1','x2','x3','x4']
+  show: boolean = true
+  user="";
+  message='';
+  klickButton() {
+    this.message = 'test';
+  }
 }
 
 

@@ -5,13 +5,40 @@
 </div>
 <p>
   {{name}}
+  <br/>
   {{"Some Example"}}
   <br/>
   38+75={{38+75}}
-  <input [(ngModel)] = "a" type="text"> * <input [(ngModel)]="b" typ2="text">
-  {{a*b}}
+  <br/>
+  <input [(ngModel)] = "a" type="text"> * 
+  <input [(ngModel)] = "b" type="text">
+  = {{a*b}}
+  <br/>
 </p>
-
+<div *ngFor = "let x of item; let i = index">
+  {{i+1}}. {{x.name}} - {{x.price|currency : '$'}}
+</div>
+<br/>
+<div *ngFor = "let data of itemArr">
+  {{data}}
+</div>
+<p *ngIf="show">Show when show=true</p>
+{{show}}
+<ng-template
+  *ngIf ="show; then showBlock; else notShowBlock">
+</ng-template>
+<ng-template #showBlock>
+  <p>Show when show is true</p>
+</ng-template>
+<ng-template #notShowBlock>
+  <p>Show when show is not true</p>
+</ng-template>
+<input [(ngModel)] = user type="text">
+<p *ngIf="user">Hello {{user}}</p>
+<p>
+  <button (click) = "klickButton()">Try Sample</button>
+  {{message}}
+</p>
 
 <!-- 
 Copyright Google LLC. All Rights Reserved.
